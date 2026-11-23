@@ -8,6 +8,9 @@
 
 ```powershell
 cd C:\Users\panca\Desktop\dz\java3
+chcp 65001
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
+$OutputEncoding = [Console]::OutputEncoding
 .\run.bat
 ```
 

@@ -1,5 +1,7 @@
 package ua.edu.dut.calculator;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -8,8 +10,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        System.setErr(new PrintStream(System.err, true, StandardCharsets.UTF_8));
         Calculator calculator = new Calculator();
-        try (Scanner scanner = new Scanner(System.in)) {
+        try (Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8)) {
             System.out.println("Калькулятор: додавання, віднімання, множення та ділення.");
             double first = readNumber(scanner, "Введіть перше число: ");
             double second = readNumber(scanner, "Введіть друге число: ");
